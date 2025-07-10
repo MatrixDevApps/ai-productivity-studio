@@ -182,6 +182,45 @@
             width: 100%;
         }
 
+        .privacy-dropdown {
+            position: relative;
+        }
+        .privacy-dropdown > a::after {
+            content: ' ▼';
+            font-size: 0.7em;
+        }
+        .privacy-menu {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: #fff;
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            min-width: 200px;
+            z-index: 1001;
+            padding: 0.5rem 0;
+        }
+        .privacy-dropdown:hover .privacy-menu,
+        .privacy-dropdown:focus-within .privacy-menu {
+            display: block;
+        }
+        .privacy-menu li {
+            list-style: none;
+        }
+        .privacy-menu a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .privacy-menu a:hover {
+            background: var(--bg-gray-50);
+            color: var(--primary-purple);
+        }
+
         /* ================================
            HERO SECTION STYLES
         ================================ */
@@ -583,10 +622,15 @@
         <div class="nav-container">
             <a href="#home" class="logo">AI Productivity Studio</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#apps">Apps</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="support.html">Support</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
+                <li class="privacy-dropdown">
+                    <a href="#">Privacy</a>
+                    <ul class="privacy-menu">
+                        <li><a href="taskwise-ai-privacy.html">TaskWise AI Privacy</a></li>
+                        <li><a href="ai-home-style-privacy.html">AI Home Style Privacy</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
